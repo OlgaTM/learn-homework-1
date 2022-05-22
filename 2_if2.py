@@ -15,12 +15,30 @@
 
 """
 
+def comparison_of_srtings(string_1, string_2):
+  if type(string_1) != str or type(string_2) != str:
+    return(0)
+  elif type(string_1) == str and type(string_2) == str and string_1 == string_2:
+    return(1)
+  elif type(string_1) == str and type(string_2) == str and string_1 != string_2 and len(string_1) > len(string_2) and string_2 != 'learn':
+    return(2)
+  elif type(string_1) == str and type(string_2) == str and string_1 != string_2 and string_2 == 'learn':
+    return(3)
+  else:
+    return('К сожалению, опции для сравнения Ваших строк нет, попробуйте другой вариант =)')
+
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
-    
+    print(comparison_of_srtings(1, 2))
+    print(comparison_of_srtings(1, 'Hello'))
+    print(comparison_of_srtings('Hello', 2))
+    print(comparison_of_srtings('Hello', 'Hello'))
+    print(comparison_of_srtings('Good afternoon', 'Hello'))
+    print(comparison_of_srtings('Good afternoon', 'learn'))
+    print(comparison_of_srtings('Hello', 'Good afternoon'))
+
 if __name__ == "__main__":
     main()

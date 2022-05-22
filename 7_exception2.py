@@ -13,11 +13,25 @@
     
 """
 
-def discounted(price, discount, max_discount=20)
+from unittest import skip
+
+
+def discounted(price, discount, max_discount=20):
     """
     Замените pass на ваш код
     """
-    pass
+    try:
+      price = abs(float(price))
+      discount = abs(float(discount))
+      max_discount = abs(int(max_discount))
+      if max_discount >= 100:
+          raise ValueError('Слишком большая максимальная скидка')
+      if discount >= max_discount:
+          return price
+      else:
+          return price - (price * discount / 100)
+    except (TypeError, ValueError):
+      print('Вводимым значением может быть только число, проверьте исходные данные.')
     
 if __name__ == "__main__":
     print(discounted(100, 2))

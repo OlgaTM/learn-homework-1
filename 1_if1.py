@@ -14,12 +14,30 @@
 
 """
 
+def current_occupation(age):
+  if age > 0 and age < 3:
+    return('ребенок')
+  elif age >= 3 and age < 7:
+    return('дошкольник')
+  elif age >= 7 and age < 18:
+    return('школьник')
+  elif age >= 18 and age < 23:
+    return('студент')
+  elif age >= 23 and age < 60:
+    return('работник')
+  elif age >= 60:
+    return('пенсионер')
+  else:
+    return('Проверьте введенное значение')
+
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    age = int(input('Пожалуйста, введите Ваш возраст: '))
+    occupation = current_occupation(age)
+    print(f'Ваша текущая занятость в соответствии с возрастом - {occupation}')
 
 if __name__ == "__main__":
     main()
